@@ -4,7 +4,9 @@
   "description": "Stub request and response objects for testing express applications and middleware",
   "main": "index.js",
   "scripts": {
-    "test": "eslint ./lib"
+    "lint": "eslint ./lib",
+    "unit": "mocha ./test --require ./test/helpers --recursive",
+    "test": "npm run lint && npm run unit"
   },
   "repository": {
     "type": "git",
@@ -26,6 +28,11 @@
     "sinon": "^1.14.1"
   },
   "devDependencies": {
-    "eslint": "^0.18.0"
+    "chai": "^2.2.0",
+    "eslint": "^0.18.0",
+    "express": "^4.12.3",
+    "mocha": "^2.2.4",
+    "sinon": "^1.14.1",
+    "sinon-chai": "^2.7.0"
   }
 }
