@@ -4,6 +4,7 @@
     },
     "rules": {
         "quotes": [1, "single"],
-        "strict": 0
+        "strict": 0,
+        "new-parens": 0
     }
 }

@@ -13,7 +13,7 @@ describe('res', function () {
         res.should.be.an.instanceOf(EventEmitter);
     });
 
-    it('emits "end" event when methods that send responses are called', function () {
+    describe('emits "end" event when methods that send responses are called', function () {
         var methods = [
             'json',
             'jsonp',
@@ -23,13 +23,12 @@ describe('res', function () {
             'sendFile',
             'sendStatus'
         ];
-        var end = sinon.stub();
-        res.on('end', end);
 
         methods.forEach(function (method) {
-            res[method]();
-            end.should.have.been.calledOnce;
-            end.reset();
+            it(method, function (done) {
+                res[method]();
+                res.on('end', done);
+            })
         });
 
     });
