@@ -1,0 +1,27 @@
+{
+  "name": "reqres",
+  "version": "0.0.0",
+  "description": "Stub request and response objects for testing express applications and middleware",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lennym/reqres.git"
+  },
+  "keywords": [
+    "express",
+    "stub",
+    "testing"
+  ],
+  "author": "Leonard Martin <hello@lennym.co.uk>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lennym/reqres/issues"
+  },
+  "homepage": "https://github.com/lennym/reqres",
+  "dependencies": {
+    "sinon": "^1.14.1"
+  }
+}
