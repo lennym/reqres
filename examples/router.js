@@ -1,3 +1,5 @@
+require('../test/helpers');
+
 var router = require('express').Router();
 router.route('/foo')
     .get(function (req, res, next) {
@@ -8,6 +10,7 @@ router.route('/foo')
         req.session.username = req.body.user;
         next();
     });
+
 var reqres = require('../');
 
 describe('my router', function () {

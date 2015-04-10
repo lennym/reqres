@@ -1,8 +1,11 @@
+require('../test/helpers');
+
 var router = require('express').Router();
 router.route('/foo')
     .get(function (req, res) {
         res.json({ user: req.session.username });
     });
+
 var reqres = require('../');
 
 describe('my router', function () {

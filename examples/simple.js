@@ -1,6 +1,9 @@
+require('../test/helpers');
+
 var middleware = function (req, res, next) {
     req.session.path = req.path;
 };
+
 var reqres = require('../');
 
 describe('my middleware', function () {
