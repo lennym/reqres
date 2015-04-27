@@ -33,4 +33,13 @@ describe('res', function () {
 
     });
 
+    describe('app', function () {
+
+        it('has get and set methods', function () {
+            res.app.get.should.be.a('function');
+            res.app.set.should.be.a('function');
+        });
+
+    });
+
 });

@@ -46,4 +46,13 @@ describe('req', function () {
 
     });
 
+    describe('app', function () {
+
+        it('has get and set methods', function () {
+            req.app.get.should.be.a('function');
+            req.app.set.should.be.a('function');
+        });
+
+    });
+
 });
