@@ -1,24 +1,27 @@
+'use strict';
+
 require('../test/helpers');
 
-var middleware = function (req, res, next) {
-    req.session.path = req.path;
+const middleware = function (req, res, next) {
+  req.session.path = req.path;
 };
 
-var reqres = require('../');
+const reqres = require('../');
 
 describe('my middleware', function () {
 
-    var req, res;
+  let req;
+  let res;
 
-    beforeEach(function () {
-        req = reqres.req(),
-        res = reqres.res()
-    });
+  beforeEach(function () {
+    req = reqres.req();
+    res = reqres.res();
+  });
 
-    it('request has properties', function () {
-        middleware(req, res, function () {
-            req.session.path.should.equal('/');
-        });
+  it('request has properties', function () {
+    middleware(req, res, function () {
+      req.session.path.should.equal('/');
     });
+  });
 
 });

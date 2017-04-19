@@ -1,4 +1,4 @@
-var chai = require('chai');
+const chai = require('chai');
 
 global.should = chai.should();
 global.expect = chai.expect;

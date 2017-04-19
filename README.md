@@ -8,14 +8,15 @@ Creates default request and response object with configurable values, and method
 [Using default request properties](./examples/simple.js):
 
 ```javascript
-var middleware = function (req, res, next) {
+const middleware = function (req, res, next) {
     req.session.path = req.path;
 };
-var reqres = require('reqres');
+const reqres = require('reqres');
 
 describe('my middleware', function () {
 
-    var req, res;
+    let req;
+    let res;
 
     beforeEach(function () {
         req = reqres.req(),
@@ -35,7 +36,7 @@ describe('my middleware', function () {
 [Testing a router](./examples/router.js):
 
 ```javascript
-var router = require('express').Router();
+const router = require('express').Router();
 router.route('/foo')
     .get(function (req, res, next) {
         req.user = req.session.username;
@@ -45,11 +46,12 @@ router.route('/foo')
         req.session.username = req.body.user;
         next();
     });
-var reqres = require('reqres');
+const reqres = require('reqres');
 
 describe('my router', function () {
 
-    var req, res;
+    let req;
+    let res;
 
     beforeEach(function () {
         req = reqres.req({ url: '/foo', session: { username: 'lennym' } });
@@ -80,16 +82,17 @@ describe('my router', function () {
 All methods which would normally send a response (and so end the middleware chain) e.g. `json`, `send` will emit an "end" event, so this can be bound onto for running assertions.
 
 ```javascript
-var router = require('express').Router();
+const router = require('express').Router();
 router.route('/foo')
     .get(function (req, res) {
         res.json({ user: req.session.username });
     });
-var reqres = require('reqres');
+const reqres = require('reqres');
 
 describe('my router', function () {
 
-    var req, res;
+    let req;
+    let res;
 
     beforeEach(function () {
         req = reqres.req({ url: '/foo', session: { username: 'lennym' } });
