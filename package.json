@@ -4,7 +4,7 @@
   "description": "Stub request and response objects for testing express applications and middleware",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint ./lib",
+    "lint": "eslint ./lib && eslint ./test",
     "unit": "mocha ./test --require ./test/helpers --recursive",
     "examples": "mocha ./examples --recursive",
     "test": "npm run lint && npm run unit && npm run examples"

@@ -1,3 +1,5 @@
+'use strict';
+
 const reqres = require('../');
 
 describe('app', function () {
