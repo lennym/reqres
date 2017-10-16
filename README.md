@@ -109,3 +109,12 @@ describe('my router', function () {
 
 });
 ```
+
+## Customisation
+
+If you want to use a different version of sinon to that which is included in reqres - or indeed a completely different stub/spy library - then you can set the sinon property to your own local version.
+
+```javascript
+const reqres = require('reqres');
+reqres.sinon = require('sinon');
+```
