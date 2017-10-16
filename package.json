@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint ./lib && eslint ./test",
-    "unit": "mocha ./test --require ./test/helpers --recursive",
-    "examples": "mocha ./examples --recursive",
+    "unit": "mocha ./test --require ./test/helpers --recursive --require choma",
+    "examples": "mocha ./examples --recursive --require choma",
     "test": "npm run lint && npm run unit && npm run examples"
   },
   "repository": {
@@ -30,6 +30,7 @@
   },
   "devDependencies": {
     "chai": "^4.1.2",
+    "choma": "^1.0.1",
     "eslint": "^3.19.0",
     "mocha": "^2.2.4",
     "sinon-chai": "^2.14.0"

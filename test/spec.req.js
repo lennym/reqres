@@ -6,6 +6,10 @@ describe('req', function () {
 
   let req;
 
+  before(() => {
+    reqres.sinon = require('sinon');
+  });
+
   beforeEach(function () {
     req = reqres.req();
   });
